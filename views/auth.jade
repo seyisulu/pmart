@@ -1,0 +1,62 @@
+extends layout.full
+
+block content
+  .ui.text.container
+    .ui.inverted.red.segment
+      #auth-accd.ui.inverted.fluid.accordion
+        .title.active
+          h2.ui.inverted.header(style='display:inline-block')
+            i.big.icon
+            | Sign in
+        .content.active
+          form#login-form.ui.large.form(method='POST', action='')
+            .ui.basic.segment
+              .field
+                .ui.input
+                  input(type='text', name='username', placeholder='Enter Username', value='', required='', autofocus='')
+              .field
+                .ui.action.input
+                  input(type='password', name='password', placeholder='Enter Password', required='')
+                  a.ui.icon.button(href='home.html', type='submit')
+                    i.red.angle.double.right.icon
+              .ui.left.aligned.basic.segment(style='padding: 0;')
+                .ui.error.message
+                  ul.ui.list
+                    li  
+              .ui.horizontal.inverted.divider  Or 
+        .title
+          h2.ui.inverted.header(style='display:inline-block')
+            i.big.inverted.angle.double.up.icon.fflipper
+            | Sign up
+        .content
+          form#signup-form.ui.large.form(method='POST', action='home.html')
+            .ui.basic.segment
+              .stackable.fields
+                .eight.wide.field
+                  .ui.input
+                    input(type='text', name='firstname', placeholder='First Name', value='', required='')
+                .eight.wide.field
+                  .ui.input
+                    input(type='text', name='lastname', placeholder='Last Name', value='', required='')
+              .stackable.fields
+                .sixteen.wide.field
+                  .ui.input
+                    input(type='text', name='license', placeholder="Driver's License No", value='', required='')
+              .stackable.fields
+                .sixteen.wide.field
+                  .ui.input
+                    input(type='text', name='contact', placeholder='Enter Contact Number', value='', required='')
+              .stackable.fields
+                .eight.wide.field
+                  .ui.input
+                    input(type='text', name='carreg', placeholder='Car Reg', value='', required='')
+                .eight.wide.field
+                  .ui.input
+                    input(type='text', name='postcode', placeholder='Enter Postcode', value='', required='')
+              .field
+                .ui.checkbox
+                  input(name='accept', type='checkbox')
+                  label.white I accept all the terms and conditions
+              .right.aligned.field
+                .ui.input
+                  a.ui.inverted.submit.button(href='home.html', type='submit') Sign Up!
