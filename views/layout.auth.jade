@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    block title
+      title PartsMart
+    include partial.head.jade
+
+  body
+    #sbc.ui.inverted.pushable.segment
+      // Page Contents
+      #snow.pusher(style='min-height: 100vh; margin: 0; padding: 0;')
+        #auther.ui.inverted.segment(style='min-height:100vh;margin-bottom:-60px;padding-bottom:60px;background-color:transparent;background-color:rgba(0,0,0,0);')
+          // Content
+          block content          
+          // End Content
+        // Footer
+        include partial.footer.jade
+        // End Footer        
+    // .pushable
+    // scripts
+    include partial.foot.jade

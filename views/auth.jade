@@ -1,4 +1,4 @@
-extends layout.full
+extends layout.auth
 
 block content
   .ui.text.container
@@ -9,7 +9,7 @@ block content
             i.big.icon
             | Sign in
         .content.active
-          form#login-form.ui.large.form(method='POST', action='')
+          form#login-form.ui.large.form(method='POST', action='/signin')
             .ui.basic.segment
               .field
                 .ui.input
@@ -17,7 +17,7 @@ block content
               .field
                 .ui.action.input
                   input(type='password', name='password', placeholder='Enter Password', required='')
-                  a.ui.icon.button(href='home.html', type='submit')
+                  button.ui.icon.button(type='submit')
                     i.red.angle.double.right.icon
               .ui.left.aligned.basic.segment(style='padding: 0;')
                 .ui.error.message
@@ -29,34 +29,26 @@ block content
             i.big.inverted.angle.double.up.icon.fflipper
             | Sign up
         .content
-          form#signup-form.ui.large.form(method='POST', action='home.html')
+          form#signup-form.ui.large.form(method='POST', action='/signup')
             .ui.basic.segment
               .stackable.fields
                 .eight.wide.field
                   .ui.input
-                    input(type='text', name='firstname', placeholder='First Name', value='', required='')
+                    input(type='text', name='fname', placeholder='First Name', value='', required='')
                 .eight.wide.field
                   .ui.input
-                    input(type='text', name='lastname', placeholder='Last Name', value='', required='')
-              .stackable.fields
-                .sixteen.wide.field
-                  .ui.input
-                    input(type='text', name='license', placeholder="Driver's License No", value='', required='')
-              .stackable.fields
-                .sixteen.wide.field
-                  .ui.input
-                    input(type='text', name='contact', placeholder='Enter Contact Number', value='', required='')
+                    input(type='text', name='lname', placeholder='Last Name', value='', required='')
               .stackable.fields
                 .eight.wide.field
                   .ui.input
-                    input(type='text', name='carreg', placeholder='Car Reg', value='', required='')
+                    input(type='text', name='email', placeholder='Email Address', value='', required='')
                 .eight.wide.field
                   .ui.input
-                    input(type='text', name='postcode', placeholder='Enter Postcode', value='', required='')
+                    input(type='text', name='phone', placeholder='Phone Number', value='', required='')
               .field
                 .ui.checkbox
                   input(name='accept', type='checkbox')
                   label.white I accept all the terms and conditions
               .right.aligned.field
                 .ui.input
-                  a.ui.inverted.submit.button(href='home.html', type='submit') Sign Up!
+                  button.ui.inverted.submit.button(type='submit') Sign Up!
