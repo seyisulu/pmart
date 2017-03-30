@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -13,6 +13,34 @@
     "jade": "~1.11.0",
     "mongoose": "^4.9.2",
     "morgan": "~1.7.0",
+    "semantic-ui-accordion": "^2.2.9",
+    "semantic-ui-checkbox": "^2.2.9",
+    "semantic-ui-css": "^2.2.9",
+    "semantic-ui-dropdown": "^2.2.9",
+    "semantic-ui-embed": "^2.2.9",
+    "semantic-ui-sidebar": "^2.2.9",
     "serve-favicon": "~2.3.2"
-  }
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "browserify": "^14.1.0",
+    "cssnano": "^3.10.0",
+    "hashmark": "^4.1.0",
+    "jshint": "^2.9.4",
+    "node-sass": "^4.5.1",
+    "npm-build-tools": "^2.2.5",
+    "npm-run-all": "^4.0.2",
+    "postcss": "^5.2.16",
+    "postcss-cli": "^3.0.0",
+    "replaceinfiles": "^1.1.4",
+    "shx": "^0.2.2",
+    "uglifyjs": "^2.4.10",
+    "watch": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://dev.unilag.edu.ng/eolowo/nhis.git"
+  },
+  "browserslist": "> 1%",
+  "author": "Emmanuel Olowosulu <eolowo@unilag.edu.ng>"
 }
