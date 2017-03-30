@@ -39,12 +39,20 @@ block content
                   .ui.input
                     input(type='text', name='lname', placeholder='Last Name', value='', required='')
               .stackable.fields
-                .eight.wide.field
-                  .ui.input
-                    input(type='text', name='email', placeholder='Email Address', value='', required='')
-                .eight.wide.field
+                .sixteen.wide.field
                   .ui.input
                     input(type='text', name='phone', placeholder='Phone Number', value='', required='')
+              .stackable.fields
+                .sixteen.wide.field
+                  .ui.input
+                    input(type='email', name='email', placeholder='Email Address', value='', required='')
+              .stackable.fields
+                .eight.wide.field
+                  .ui.input
+                    input(type='password', name='password', placeholder='Password', value='', required='')
+                .eight.wide.field
+                  .ui.input
+                    input(type='password', name='psswdtwo', placeholder='Confirm Password', value='', required='')
               .field
                 .ui.checkbox
                   input(name='accept', type='checkbox')
