@@ -52,7 +52,7 @@ a:focus,
 .services-item i,
 .client-info h4,
 blockquote {
-    color: #197cd9; /* Primary color */
+    color: #1a133f; /* Primary color */
 }
 
 .pace .pace-progress,
@@ -83,7 +83,7 @@ blockquote {
 .scroll-top a:link,
 .scroll-top a:visited,
 blockquote {
-    border-color: #197cd9; /* Primary color */
+    border-color: #1a133f; /* Primary color */
 }
 
 .testimonials p.speech:before {
@@ -100,8 +100,8 @@ blockquote {
 .btn-overcolor:hover,
 .btn-overcolor:focus,
 .scroll-top a:hover {
-    border: 1px solid #043b74; /* Hover color */
-    background: #043b74; /* Hover color */
+    border: 1px solid #1a133f; /* Hover color */
+    background: #1a133f; /* Hover color */
 }
 
 .full-project:hover {

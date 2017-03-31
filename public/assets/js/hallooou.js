@@ -52,7 +52,7 @@ $(function(){
         $('#portfolio').parallax("50%", 0.1);
         $('#page-aboutus').parallax("50%", 0.9);
         $('#delivery-man').parallax("20%", 10);
-        
+        $('#partbox').parallax("20%", 10);
     }
 });
 

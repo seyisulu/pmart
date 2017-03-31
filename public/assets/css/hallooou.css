@@ -198,6 +198,7 @@ a:focus {
 
 .content-section {
     padding: 100px 0;
+    background-color: #f5c607;
 }
 
 .content-section.alt-bg{
@@ -205,9 +206,12 @@ a:focus {
 }
 
 .content-section.alt-bg-light{
-    background-color: #fafafa;
     border-top:1px solid #f5f5f5;
     border-bottom:1px solid #d2d2d2;
+}
+
+.content-section.contact {
+  background-color: #fafafa;
 }
 
 .caption{
@@ -845,7 +849,7 @@ video {
 }
 
 .products-container h2 {
-  color: yellow;
+  color: #f5c607;
 }
 
 .products-container p{
@@ -873,7 +877,7 @@ video {
     margin: 0;
     padding: 0 10px;
     font-size: 20px;
-    color: yellow;
+    color: #f5c607;
 }
 
 .product-item p{
@@ -993,6 +997,7 @@ video {
 #portfolio{
     background: #222;
     background: url(../images/portfolio_bg.jpg) 50% 0 no-repeat scroll;
+    background-color: #1a133f;
     -webkit-background-size: cover;
        -moz-background-size: cover;
             background-size: cover;
@@ -1898,6 +1903,7 @@ footer .social a{
 
     .products{
         text-align: left;
+        background-color: #1a133f;
     }
 
 }
