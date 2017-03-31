@@ -7,6 +7,78 @@ module.exports = function (opt) {
     res.render('auth', { title: 'PartsMart' });
   });
   
+  opt.router.get('/search', function(req, res) {
+    opt.asynx.parallel({
+      makes: function(cb) {
+        opt.dbo.Car
+        .find({ })
+        .distinct('make')
+        .exec(function(err, doc) {
+          if (err) opt.log.error('Error fetching cars');
+          cb(err, doc);
+        });
+      }
+    }, function(err, results) {
+      res.render('search', results);
+    });    
+  });
+  
+  opt.router.post('/search', function(req, res) {
+    opt.asynx.parallel({
+      makes: function(cb) {
+        opt.dbo.Car
+        .find({ })
+        .distinct('make')
+        .exec(function(err, doc) {
+          if (err) opt.log.error('Error fetching cars');
+          cb(err, doc);
+        });
+      },
+      search: function(cb) {
+        opt.dbo.Car
+        .find({ make: req.body.make, model: req.body.model, year: req.body.year })
+        .exec(function(err, doc) {
+          if (err) opt.log.error('Error fetching cars');
+          cb(err, doc);
+        });
+      }
+    }, function(err, results) {
+      res.render('search', results);
+    });    
+  });
+  
+  opt.router.post('/model', function(req, res) {
+    opt.asynx.parallel({
+      models: function(cb) {
+        opt.dbo.Car
+        .find({ make: req.body.make })
+        .distinct('model')
+        .exec(function(err, doc) {
+          if (err) opt.log.error('Error fetching models');
+          cb(err, doc);
+        });
+      }
+    }, function(err, results) {
+      res.json(results);
+    });    
+  });
+  
+  opt.router.post('/year', function(req, res) {
+    opt.asynx.parallel({
+      years: function(cb) {
+        opt.dbo.Car
+        .find({ make: req.body.make, model: req.body.model })
+        .distinct('year')
+        .exec(function(err, doc) {
+          if (err) opt.log.error('Error fetching years');
+          cb(err, doc);
+        });
+      }
+    }, function(err, results) {
+      res.json(results);
+    });    
+  });
+  
   opt.router.post('/signin', opt.passport.authenticate('local-signin', {
       successRedirect: '/', // dashboard
       failureRedirect: '/auth',

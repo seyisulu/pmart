@@ -1,0 +1,66 @@
+extends layout.auth
+
+block content
+  .ui.text.container
+    .ui.inverted.red.segment
+      #auth-accd.ui.inverted.fluid.accordion
+        .title.active
+          h2.ui.inverted.header(style='display:inline-block')
+            | Search PartsMart
+        .content.active          
+          form#signup-form.ui.large.form(method='POST', action='/search')
+            .ui.basic.segment
+              .stackable.fields
+                .five.wide.field
+                  label Make
+                  .ui.input
+                    select.fluid(title='Select make', name='make', id='make', required)
+                      option -- select make --
+                      each make in makes
+                        option(value=make, title=make)= make
+                .five.wide.field
+                  label Model
+                  .ui.input
+                    select.fluid(title='Select model', name='model', id='model', required)
+                      option -- select model --
+                .five.wide.field
+                  label Year
+                  .ui.input                    
+                    select.fluid(title='Select year', name='year', id='year', required)
+                      option -- select year --
+              .stackable.fields
+                .fifteen.wide.field
+                  .ui.input
+                    input(type='text', name='part', placeholder='Enter Part Name', value='', required='')
+                    
+              .field
+                .ui.checkbox
+                  input(name='accept', type='checkbox')
+                  label.white I accept all the terms and conditions
+              .right.aligned.field
+                .ui.input
+                  button.ui.inverted.submit.button(type='submit') Go
+                  
+          if !!search
+            .ui.inverted.red.segment
+              .ui.large.inverted.statistic
+                .label
+                  | Cars Found
+                .value
+                  | 3
+                  sup(style='top: -0.25em;')
+                    i.small.car.icon
+            table.ui.fixed.single.line.striped.red.table
+              thead
+                tr
+                  th.eight.wide Details
+                  th.four.wide Fuel
+                  th.four.wide Trans
+              tbody
+              each s in search
+                tr
+                  td(data-th='Details') #{s.drive}
+                  td(data-th='Fuel') #{s.fuelType}
+                  td(data-th='Trans') #{s.trany}
+
+

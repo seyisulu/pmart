@@ -59,4 +59,30 @@ script.
   }, settings.delay);
   })();
   })();
+  $('#make').on('change', function (e) {
+    var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+    console.log(valueSelected);
+    $.post( "/model", { make: valueSelected })
+    .done(function( data ) {
+      $.each(data.models, function(key, value) {
+        $("#model").append("<option>" + value + "</option>");
+      });
+      console.log(data.models);
+    });
+  });
+  $('#model').on('change', function (e) {
+    var makeSelected = $("#make option:selected").val();
+    console.log(makeSelected);
+    var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+    console.log(valueSelected);
+    $.post( "/year", { model: valueSelected, make: makeSelected })
+    .done(function( data ) {
+      console.log(data);
+      $.each(data.years, function(key, value) {
+        $("#year").append("<option>" + value + "</option>");
+      });
+    });
+  });
 // end scripts

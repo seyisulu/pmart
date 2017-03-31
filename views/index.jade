@@ -1,10 +1,587 @@
-extends layout.land
+extends layout.site
 
 block content
-  .ui.text.container
-    h1.ui.inverted.header
-      img(src='assets/img/logo.png', style='width:150px!important;')
-    h2.ui.inverted.header
-      | PartsMart
-    p Nigeria&apos;s Number One Online Auto Parts Shop
-    a#go-button.ui.huge.red.button(href='/auth') Order
+  // Intro Header
+  // Full Page Image Background Carousel Header
+  header#intro-carousel.carousel.slide
+    // Optional Indicators
+    //
+      <ol class="carousel-indicators">
+      <li data-target="#intro-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#intro-carousel" data-slide-to="1"></li>
+      <li data-target="#intro-carousel" data-slide-to="2"></li>
+      </ol>
+    // Wrapper for slides
+    .carousel-inner
+      .item.active
+        // Set the first background image using inline CSS below.
+        .fill(style="background-image:url('/assets/images/cover-one.jpg');")
+        .carousel-caption
+          h1.animated.slideInDown
+            | Welcome to PartsMart
+            span.highlight 
+          p.intro-text.animated.slideInUp
+            | Genuine automobile parts, fast &amp; affordable
+          a.btn.btn-default.btn-lg(href='/search') Search
+        .overlay-detail
+      // /.item
+      .item
+        // Set the second background image using inline CSS below.
+        .fill(style="background-image:url('/assets/images/cover-two.jpg');")
+        .carousel-caption
+          h1.animated.slideInDown
+            span.highlight Responsive & Retina
+            |  Ready
+          p.intro-text.animated.slideInUp A clean and bold HTML5 template, Halloou is ultra responsive and retina ready.
+          a.btn.btn-default.btn-lg(href='http://bit.ly/hh5_template') Download theme
+        .overlay-detail
+      // /.item
+      .item
+        // Set the second background image using inline CSS below.
+        .fill(style="background-image:url('/assets/images/cover-three.jpg');")
+        .carousel-caption
+          h1.animated.slideInDown
+            | Customizable 
+            span.highlight colors
+            |  & blocks
+          p.intro-text.animated.slideInUp
+            | Halloou gives you the freedom to easily change the color of the whole template to match your brand, re-arrange blocks to suit your needs.
+          a.btn.btn-default.btn-lg(href='http://bit.ly/hh5_template') Download theme
+        .overlay-detail
+      // /.item
+    // Controls
+    a.left.carousel-control.squared(href='#intro-carousel', data-slide='prev')
+      i.fa.fa-angle-left.fa-2x
+    a.right.carousel-control.squared(href='#intro-carousel', data-slide='next')
+      i.fa.fa-angle-right.fa-2x
+    .mouse
+  // About Section
+  section#about.about.content-section.alt-bg-light
+    .container
+      .row
+        .col-md-6
+          h2 Happy & excited about Hallooou
+          h3.caption.gray Customers in 100+ countries use our services
+          p
+            | A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of existence.
+          blockquote
+            | There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.
+            span Ray Goforth
+          h3.gray.light
+            | Over the past 11 years we&apos;ve worked with some amazing small businesses, non-profits, academic institutions and even Fortune 100 companies.
+        // /.col-md-6
+        .col-md-6
+          // Display image
+          // <img src="/assets/images/hallooou_template-iphone_sm.png" class="img-responsive">
+          // Optional video embed code
+          .embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item(src='https://player.vimeo.com/video/132613118?title=0&byline=0&portrait=1', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+        // /.col-md-6
+      // /.row
+    // /.container
+  // /.section
+  // Services Section
+  section#services.services.content-section
+    .container
+      .row.text-center
+        .col-md-12
+          h2 What we do
+          h3.caption.gray Eleifend mi iaculis parturient etiam volutpat pulvinar eleifend
+        // /.col-md-12
+        .container
+          .row.text-center
+            .col-md-4
+              .row.services-item.sans-shadow.text-center
+                i.fa.fa-cogs.fa-3x
+                h4 Development
+                p We build Wordpress and custom plugins and back-end solutions.
+              // /.row
+            // /.col-md-4
+            .col-md-4
+              .row.services-item.sans-shadow.text-center
+                i.fa.fa-paint-brush.fa-3x
+                h4 UI/UX
+                p We love creating beautiful and functional designs for our clients
+              // /.row
+            // /.col-md-4
+            .col-md-4
+              .row.services-item.sans-shadow.text-center
+                i.fa.fa-bullhorn.fa-3x
+                h4 Social Marketing
+                p Discover social marketing and take your business to new heights
+              // /.row
+            // /.col-md-4
+            .col-md-4
+              .row.services-item.sans-shadow.text-center
+                i.fa.fa-database.fa-3x
+                h4 System Design
+                p Every website needs the right environment if it plans to be successful
+              // /.row
+            // /.col-md-4
+            .col-md-4
+              .row.services-item.sans-shadow.text-center
+                i.fa.fa-align-left.fa-3x
+                h4 Copywriting
+                p What you say and how you say it is as important as everything else
+              // /.row
+            // /.col-md-4
+            .col-md-4
+              .row.services-item.sans-shadow.text-center
+                i.fa.fa-camera.fa-3x
+                h4 Photography
+                p Specializing in product and photo journalistic style photography
+              // /.row
+            // /.col-md-4
+          // /.row
+        // /.container
+      // /.row
+    // /.container
+  // /.section
+  // Products Section
+  section#products.products.content-section
+    .container
+      .row
+        .col-md-6
+          img#delivery-man.center-block.img-responsive(src='/assets/images/pix/delivery.png')
+        // /.col-md-6
+        .col-md-6
+          .products-container
+            .col-md-12
+              h2 Why Choose PartsMart?
+              h3.caption.white PartsMart aggregate parts, prices &amp; availability from various suppliers from around the world
+            // /.col-md-12
+            .col-md-6.product-item
+              .media-left
+                span.icon
+                  i.fa.fa-list-ol.fa-3x
+              // /.media-left
+              .media-body
+                h3.media-heading Variety
+                p We provide unrivalled variety in the choice of auto parts to all our customers anywhere in Nigeria
+              // /.media-body
+            // /.col-md-6
+            .col-md-6.product-item
+              .media-left
+                span.icon
+                  i.fa.fa-globe.fa-3x
+              // /.media-left
+              .media-body
+                h3.media-heading Global Reach
+                p GMC, with its strategic international partnerships, can fulfill on orders from around the world to customers&apos; doorsteps
+              // /.media-body
+            // /.col-md-6
+            
+            .col-md-6.product-item
+              .media-left
+                span.icon
+                  i.fa.fa-eye.fa-3x
+              // /.media-left
+              .media-body
+                h3.media-heading Quality Assurance
+                p PartsMart aims to eradicate the challenge Nigerians face in getting quality parts for their vehicles
+              // /.media-body
+            // /.col-md-6
+            .col-md-6.product-item
+              .media-left
+                span.icon
+                  i.fa.fa-toggle-on.fa-3x
+              // /.media-left
+              .media-body
+                h3.media-heading You&apos;re Covered
+                p Purchase genuine and authentic spare parts for bikes, cars &amp; trucks from OEMs in US, UK and Europe
+              // /.media-body
+            // /.col-md-6
+          // /.products-container
+        // /.col-md-6
+      // /.row
+    // /.container
+  // /.products
+  // Our team Section
+  section#team.team.content-section
+    .container
+      .row.text-center
+        .col-md-12
+          h2 Our Team
+          h3.caption.gray Meet the people who make awesome stuffs
+        // /.col-md-12
+        .container
+          .row
+            .col-md-4
+              .team-member
+                figure
+                  img.img-responsive(src='/assets/images/lauren-cox.jpg', alt='')
+                  figcaption
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores mollitia.
+                    ul
+                      li
+                        a(href='')
+                          i.fa.fa-facebook.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-twitter.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-linkedin.fa-2x
+                h4 Lauren Cox
+                p Creative Director
+              // /.team-member
+            // /.col-md-4
+            .col-md-4
+              .team-member
+                figure
+                  img.img-responsive(src='/assets/images/jessie-barnett.jpg', alt='')
+                  figcaption
+                    p
+                      | Neque minima ea, a praesentium saepe nihil maxime quod esse numquam explicabo eligendi.
+                    ul
+                      li
+                        a(href='')
+                          i.fa.fa-facebook.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-twitter.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-linkedin.fa-2x
+                h4 Jessie Barnett
+                p UI/UX Designer
+              // /.team-member
+            // /.col-md-4
+            .col-md-4
+              .team-member
+                figure
+                  img.img-responsive(src='/assets/images/terry-fletcher.jpg', alt='')
+                  figcaption
+                    p
+                      | Temporibus dolor, quisquam consectetur molestias, veniam voluptatum. Beatae alias omnis totam.
+                    ul
+                      li
+                        a(href='')
+                          i.fa.fa-facebook.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-twitter.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-linkedin.fa-2x
+                h4 Terry Fletcher
+                p Web Developer
+              // /.team-member
+            // /.col-md-4
+            .col-md-4
+              .team-member
+                figure
+                  img.img-responsive(src='/assets/images/lauren-cox.jpg', alt='')
+                  figcaption
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores mollitia.
+                    ul
+                      li
+                        a(href='')
+                          i.fa.fa-facebook.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-twitter.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-linkedin.fa-2x
+                h4 Lauren Cox
+                p Creative Director
+              // /.team-member
+            // /.col-md-4
+            .col-md-4
+              .team-member
+                figure
+                  img.img-responsive(src='/assets/images/jessie-barnett.jpg', alt='')
+                  figcaption
+                    p
+                      | Neque minima ea, a praesentium saepe nihil maxime quod esse numquam explicabo eligendi.
+                    ul
+                      li
+                        a(href='')
+                          i.fa.fa-facebook.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-twitter.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-linkedin.fa-2x
+                h4 Jessie Barnett
+                p UI/UX Designer
+              // /.team-member
+            // /.col-md-4
+            .col-md-4
+              .team-member
+                figure
+                  img.img-responsive(src='/assets/images/terry-fletcher.jpg', alt='')
+                  figcaption
+                    p
+                      | Temporibus dolor, quisquam consectetur molestias, veniam voluptatum. Beatae alias omnis totam.
+                    ul
+                      li
+                        a(href='')
+                          i.fa.fa-facebook.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-twitter.fa-2x
+                      li
+                        a(href='')
+                          i.fa.fa-linkedin.fa-2x
+                h4 Terry Fletcher
+                p Web Developer
+              // /.team-member
+            // /.col-md-4
+          // /.row
+        // /.container
+      // /.row
+    // /.container
+  // /.our-team
+  // Portfolio/Gallery Section
+  section#portfolio.portfolio.content-section
+    .container
+      .row.text-center
+        .col-md-12
+          h2 Some of our recent work
+          h3.caption.white
+            | Designed with passion and coded to perfection, Hallooou is a stylish responsive HTML template, that is packed with tons of features yet is so easy to use.
+        // /.col-md-12
+      // /.row
+    // /.container
+    .container.project-container.text-center
+      .recent-project-carousel.owl-carousel.owl-theme.popup-gallery
+        .item.recent-project
+          img(src='/assets/images/gallery/project-one.jpg', alt='')
+          .project-info
+            h3 Lakeview Inc.
+            ul.project-meta
+              li
+                a(href='#') Website Design
+          // /.project-info
+          .full-project
+            a(href='/assets/images/gallery/project-one_xl.jpg', title='Lakeview Inc. | Website Design')
+              | View project 
+              i.fa.fa-chevron-right
+          // /.full-project
+        // /.item
+        .item.recent-project
+          img(src='/assets/images/gallery/project-two.jpg', alt='')
+          .project-info
+            h3 Adam Productions
+            ul.project-meta
+              li
+                a(href='#') App Design
+          // /.project-info
+          .full-project
+            a(href='/assets/images/gallery/project-two_xl.jpg', title='Adam Productions | App Design')
+              | View project 
+              i.fa.fa-chevron-right
+          // /.full-project
+        // /.item
+        .item.recent-project
+          img(src='/assets/images/gallery/project-three.jpg', alt='')
+          .project-info
+            h3 Doe Associates
+            ul.project-meta
+              li
+                a(href='#') Branding
+          // /.project-info
+          .full-project
+            a(href='/assets/images/gallery/project-three_xl.jpg', title='Doe Associates | Branding')
+              | View project 
+              i.fa.fa-chevron-right
+          // /.full-project
+        // /.item
+        .item.recent-project
+          img(src='/assets/images/gallery/project-four.jpg', alt='')
+          .project-info
+            h3 Omega Corporation
+            ul.project-meta
+              li
+                a(href='#') App Design
+          // /.project-info
+          .full-project
+            a(href='/assets/images/gallery/project-four_xl.jpg', title='Omega Corporation | App Design')
+              | View project 
+              i.fa.fa-chevron-right
+          // /.full-project
+        // /.item
+      // /.recent-project-carousel
+      .customNavigation.project-navigation.text-center
+        a.btn-prev
+          i.fa.fa-angle-left.fa-2x
+        a.btn-next
+          i.fa.fa-angle-right.fa-2x
+      // /.project-navigation
+    // /.container
+  // /.portfolio
+  // Our clients
+  section#clients.our-clients.content-section.text-center
+    .container
+      .row
+        .col-md-12
+          h2 Our clients
+          h3.caption.white
+            | Decent listing with your clients. Fully customizable and ready to use in any subpages as you want. Responsive for any numbers of clients in this section.
+        // /.col-md-12
+      // /.row
+      .row.client-slider
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/sony-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/nike-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/paramount-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/microsoft-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/citibank-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/fedex-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/sony-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/nike-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/paramount-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/microsoft-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/citibank-logo.png')
+        // /.col-xs-4
+        .item.col-xs-4.col-md-2.i
+          a(href='#', title='#')
+            img.img-responsive(src='/assets/images/fedex-logo.png')
+        // /.col-xs-4
+      // /.row
+    // /.container
+  // /.our-clients
+  // Testimonials Section
+  section.testimonials.content-section
+    .container
+      .row.text-center
+        .col-md-12
+          h2 Rated 4.8 out of 5
+          h3.caption.gray Here&apos;s what our clients have to say
+        // /.col-md-12
+        .container
+          .row
+            .col-md-8.col-md-offset-2
+              .client-testimonials.owl-carousel.owl-theme
+                .item
+                  p.speech
+                    | Hallooou is the best HTML5 template we have EVER purchased. It&apos;s the perfect solution for our business. The unlimited customization helps us get things done quickly and efficiently.
+                  .client-info
+                    img(src='/assets/images/gina_stone-client_pic.jpg')
+                    h4 Gina Stone
+                    span Adam Productions
+                // /.item
+                .item
+                  p.speech
+                    | This is the real deal! Very easy to use. Thanks to Hallooou HTML5 template, we&apos;ve just launched our new website! I couldn&apos;t have asked for more than this. Definitely worth the investment.
+                  .client-info
+                    img(src='/assets/images/john_doe-client_pic.jpg')
+                    h4 John Doe
+                    span Doe Associates
+                // /.item
+                .item
+                  p.speech
+                    | We are loving it. The best on the net! I strongly recommend Hallooou HTML5 template to everyone interested in running a successful business! Hallooou HTML5 template has really helped our business.
+                  .client-info
+                    img(src='/assets/images/dana_hill-client_pic.jpg')
+                    h4 Dana Hill
+                    span Lakeview Inc.
+                // /.item
+              // /.client-testimonials
+            // /.col-md-8
+          // /.row
+        // /.container
+      // /.row
+    // /.container
+  // /#testimonials
+  // Call to action - one section
+  section.cta-one-section.content-section.alt-bg-light
+    .container
+      .row.text-center
+        .col-md-6
+          h2 Halloou is a creative HTML5 template
+          h3.caption.gray Optional title for call to action
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quis quam, culpa deserunt hic et numquam eius accusamus expedita quidem sit voluptate!
+          a.btn.btn-default.btn-lg(href='#') Questions?
+          a.btn.btn-outlined.btn-lg(href='#') Contact us
+        // /.col-md-6
+        .col-md-6
+          img.img-responsive(src='/assets/images/hallooou-responsive.png')
+        // /.col-md-6
+      // /.row
+    // /.container
+  // /.cta-one-section
+  // Counter Section
+  section#counter.counter-section.content-section
+    .container
+      .row.text-center
+        .col-md-12
+          h2.white Our Achievements
+          h3.caption Ultricestum urna litora sit sed praesent condimentum eu a et scelerisque
+        // /.col-md-12
+        .col-sm-3.counter-wrap
+          strong
+            span.timer 350
+            | +
+          span.count-description Clients Worked With
+        // /.col-sm-3
+        .col-sm-3.counter-wrap
+          strong
+            span.timer 250
+            | +
+          span.count-description Nominations
+        // /.col-sm-3
+        .col-sm-3.counter-wrap
+          strong
+            span.timer 160
+            | +
+          span.count-description Awards Won
+        // /.col-sm-3
+        .col-sm-3.counter-wrap
+          strong
+            span.timer 1650
+            | +
+          span.count-description Cups Of Coffee
+        // /.col-sm-3
+      // /.row
+    // /.container
+  // /.counter-section
+  // Call to action - two section
+  section.cta-two-section
+    .container
+      .row
+        .col-sm-9
+          h3 Have an idea?
+          p We’re here to help you manage your work
+        .col-sm-3
+          a.btn.btn-overcolor(href='#') Get in touch
+      // /.row
+    // /.container
+  // /.cta-two-section
