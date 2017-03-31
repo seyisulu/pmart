@@ -11,7 +11,7 @@ html(lang='en')
     link(href='/assets/css/hallooou.css', rel='stylesheet')
     // Color stylesheet
     link(href='/assets/css/colors.css', rel='stylesheet')
-    link(href='/assets/css/colors_2.css', rel='stylesheet')
+    link(href='/assets/css/colors_2.css?v=1.1', rel='stylesheet')
     // Plugin stylesheets
     link(href='/assets/css/plugins/owl.carousel.css', rel='stylesheet')
     link(href='/assets/css/plugins/owl.theme.css', rel='stylesheet')
@@ -38,7 +38,7 @@ html(lang='en')
           a.navbar-brand.page-scroll(href='#page-top')
             // replace with your brand logo/text
             span.brand-logo
-              img.img-responsive(src='/assets/images/logo.svg', onerror="this.src='/assets/images/logo.png'; this.onerror=null;", alt='PartsMart', title='PartsMart')
+              img.img-responsive(src='/assets/images/logo.png', style='max-height: 64px;', alt='PartsMart', title='PartsMart')
         .main-nav.pull-right
           .button_container.toggle
             span.top
@@ -50,11 +50,7 @@ html(lang='en')
               li
                 a(href='#about') About PartsMart
               li
-                a(href='#services') What we do
-              li
-                a(href='#products') Why choose us
-              li
-                a(href='#team') Our Team
+                a(href='#products') Why Choose Us
               li
                 a(href='#portfolio') Portfolio
               li
@@ -72,7 +68,7 @@ html(lang='en')
           .col-md-12
             h2 Contact
             h3.caption.gray
-              | Feel free to get in touch with us if you have a new project or simply something awesome
+              | Feel free to get in touch with us if you have any questions
           // /.col-md-12
         // /.row
       // /.container
@@ -94,24 +90,22 @@ html(lang='en')
                   i.fa.fa-paper-plane.fa-fw
                   |  Send
           // /.contact-form
+
           .col-md-4.contact-address
             h3 Our address
             p
-              | 76 Ninth Ave,
+              | 41 Saka Tinubu Street,
               br
-              | New York, NY 10011,
+              | Victoria Island, Lagos,
               br
-              |  United States
+              |  NIGERIA.
             ul
               li
                 span Email:
-                | hello@hallooou.com
+                | info@partmart.com
               li
                 span Phone:
-                | +88 (0) 101 0000 000
-              li
-                span Fax:
-                | +88 (0) 202 0000 001
+                | +234 1 342 6989
           // /.contact-address
         // /.row
       // /.container
@@ -128,11 +122,10 @@ html(lang='en')
         .container
           .row.text-center
             .col-md-12.segment
-              a(href='#', title='Hallooou - HTML5 Template')
+              a(href='#', title='PartsMart')
                 h2
-                  // replace with your brand logo/text
-                  img.img-responsive(src='/assets/images/logo.svg', onerror="this.src='/assets/images/logo.png'; this.onerror=null;", alt='Hallooou - HTML5 Template', title='Hallooou - HTML5 Template')
-              p.white We believe in Simple, Creative & Flexible Design Standards.
+                  img.img-responsive(src='/assets/images/logo.png', alt='PartsMart', title='PartsMart', style='max-height: 128px;')
+              p.white  Genuine automobile parts, fast &amp; affordable
             // /.col-md-12
           // /.row
           .row.text-center
@@ -151,7 +144,7 @@ html(lang='en')
           .container
             .row
               .col-md-12.text-center
-                | © 2015. Hallooou. All rights reserved.
+                | © 2017. PartsMart
               // /.col-md-12
             // /.row
           // /.container

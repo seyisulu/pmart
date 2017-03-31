@@ -287,7 +287,7 @@ blockquote span{
 
 .navbar-custom .navbar-brand span.brand-logo{
     display: inline-block;
-    padding: 14px 0;
+    padding: 0;
     margin: 0 16px;
 }
 
@@ -523,14 +523,19 @@ blockquote span{
     padding: 0;
     margin: 10px 0;
     color: #fff;
+    font-size: 6em;
+    font-weight: bold;
 } 
 
 .carousel-caption .intro-text{
     padding: 0;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .carousel-caption .btn{
     margin:0;
+    font-weight: bold;
 }
 
 .carousel-control{
@@ -1948,3 +1953,6 @@ body {
     border:1px solid #f00;
 }
 
+select#part {
+  display: none;
+}

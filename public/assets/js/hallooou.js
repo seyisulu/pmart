@@ -48,10 +48,10 @@ $(function(){
         //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
         
         $('#parallax-slide').parallax("50%", 0.1);
-        $('#products').parallax("50%", 0.1);
+        $('#products').parallax("60%", 0.2);
         $('#portfolio').parallax("50%", 0.1);
-        $('#page-aboutus').parallax("50%", 0.1);
-        $('#delivery-man').parallax("25%", 4);
+        $('#page-aboutus').parallax("50%", 0.9);
+        $('#delivery-man').parallax("20%", 10);
         
     }
 });
@@ -178,7 +178,7 @@ $(function() {
 
 // Carousel Slider
 $(function() {
-    interval: 8000 //changes the speed
+    interval: 5000 //changes the speed
 });
 
 
@@ -240,9 +240,9 @@ $(function() {
 $(function() {
 
     //set your google maps parameters
-    var latitude = 40.7412541,
-        longitude = -74.0040725,
-        map_zoom = 14;
+    var latitude = 6.4270419,
+        longitude = 3.4190229,
+        map_zoom = 15;
 
     //google map custom marker icon - .png fallback for IE11
     var is_internetExplorer11 = navigator.userAgent.toLowerCase().indexOf('trident') > -1;
@@ -611,3 +611,35 @@ $(function() {
     });
 
 });
+(function finder($){
+  $('#make').on('change', function (e) {
+    var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+    console.log(valueSelected);
+    $.post( "/model", { make: valueSelected })
+    .done(function( data ) {
+      $("#model").empty();
+      $.each(data.models, function(key, value) {
+        $("#model").append("<option>" + value + "</option>");
+      });
+      console.log(data.models);
+    });
+  });
+  $('#model').on('change', function (e) {
+    var makeSelected = $("#make option:selected").val();
+    console.log(makeSelected);
+    var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+    console.log(valueSelected);
+    $.post( "/year", { model: valueSelected, make: makeSelected })
+    .done(function( data ) {
+      console.log(data);
+      $("#year").empty();
+      $.each(data.years, function(key, value) {
+        $("#year").append("<option>" + value + "</option>");
+      });
+      $('#part').show();
+    });
+  });
+  
+})(jQuery);

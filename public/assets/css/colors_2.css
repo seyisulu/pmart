@@ -3,6 +3,7 @@ Template: Hallooou HTML5 Responsive template
 Author: Mauritius D'Silva <hello@mauritiusdsilva.com>
 Theme URI: http://www.mauritiusdsilva.com/themes/hallooou
 Version: 1.0
+Edited to PartsMart Blue
 
 */
 
@@ -17,7 +18,7 @@ Version: 1.0
 4:  Secondary color
 5:  Slider (Hero unit) overlay color (optional)
 6:  Colors with opacity
-7:  Dark color/Footer color
+7:  Dark color/Footer color 
 8:  Text selection color
 
 /*
@@ -99,12 +100,12 @@ blockquote {
 .btn-overcolor:hover,
 .btn-overcolor:focus,
 .scroll-top a:hover {
-    border: 1px solid #096ac6; /* Hover color */
-    background: #096ac6; /* Hover color */
+    border: 1px solid #043b74; /* Hover color */
+    background: #043b74; /* Hover color */
 }
 
 .full-project:hover {
-    background: #096ac6; /* Hover color */
+    background: #043b74; /* Hover color */
 }
 
 .btn-overcolor:hover{

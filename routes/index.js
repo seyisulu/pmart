@@ -1,6 +1,18 @@
 module.exports = function (opt) {  
   opt.router.get('/', function(req, res) {
-    res.render('index', { title: 'PartsMart' });
+    opt.asynx.parallel({
+      makes: function(cb) {
+        opt.dbo.Car
+        .find({ })
+        .distinct('make')
+        .exec(function(err, doc) {
+          if (err) opt.log.error('Error fetching cars');
+          cb(err, doc);
+        });
+      }
+    }, function(err, results) {
+      res.render('index', results);
+    });
   });
   
   opt.router.get('/auth', function(req, res) {
