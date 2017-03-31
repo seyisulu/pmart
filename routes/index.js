@@ -19,6 +19,28 @@ module.exports = function (opt) {
     res.render('auth', { title: 'PartsMart' });
   });
   
+  opt.router.post('/touch', function(req, res) {
+    var rqb = req.body;
+    process.nextTick(() => {
+        opt.mail.send(
+          rqb.email,
+          'PartsMart: Thank You',
+          {
+            name: rqb.name,
+            body: [
+              `<strong>Email:</strong> ${rqb.email.trim()}`,
+              `<strong>Phone:</strong> ${rqb.phone.trim()}`,
+              'You wrote:',
+              `<strong>Message:</strong><br> ${rqb.message.trim()}`,
+              'Thank you for your email, we will get back to you shortly.'
+            ]
+          })
+          .then(resp => opt.log.info(resp))
+          .catch(err => opt.log.error(err));
+      });
+    res.json({ type: 'success', text: `Hi ${rqb.name.trim()}, thank you for your email, we will get back to you shortly.` });   
+  });
+  
   opt.router.get('/search', function(req, res) {
     opt.asynx.parallel({
       makes: function(cb) {
@@ -122,8 +144,8 @@ module.exports = function (opt) {
               'Please sign in <a href="http://pmart.jupeb.edu.ng/auth">here</a>'
             ]
           })
-          .then(resp => res.json(resp))
-          .catch(err => res.json(err));
+          .then(resp => opt.log.info(resp))
+          .catch(err => opt.log.error(err));
       });
       req.login(user, function signupUserLogin() {
         return res.redirect('/');

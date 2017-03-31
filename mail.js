@@ -6,7 +6,7 @@ module.exports = function(opts) {
         body: [
           'Welcome,',
           'We hope you like it here.',
-          'Please share with your friends on social media <a href="/share>here</a>."'
+          'Please share with your friends on social media <a href="/share">here</a>.'
         ]
       }
     */
