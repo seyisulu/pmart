@@ -21,6 +21,9 @@ module.exports = function(opts) {
                   {
                     email: to,
                   },
+                  {
+                    email: process.env.SG_BCC,
+                  }
                 ],
                 subject: subject,
               },

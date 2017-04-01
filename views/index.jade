@@ -81,49 +81,10 @@ block content
           a.btn.btn-default(href='#about', style='background-color: #1a133f;')
             i.fa.fa-chevron-circle-right.fa-fw
             |  More
-        // /.col-md-6
+        // /.col-md-8
         .col-md-4
-          h3 Part Search
-            form#partForm.ajax-form(method='post', action='/search')
-              .form-group
-                select#make.form-control(required)
-                  option -- select make --
-                  each make in makes
-                    option(value=make, title=make)= make
-              .form-group
-                select#model.form-control(required)
-                
-              .form-group
-                select#year.form-control(required)
-                
-              .form-group                
-                select#part.form-control(required)
-                  option Alternator
-                  option Carbon Brushes
-                  option Coil
-                  option Fuel gauge
-                  option Housing
-                  option Odometer
-                  option Pulley
-                  option Rectifier
-                  option Regulator
-                  option Retainer
-                  option Rotor
-                  option Rotor Assembly
-                  option Slip Rings
-                  option Speedometer
-                  option Stator
-                  option Tachometer
-                  option Temperature gauge
-                  option Tire pressure gauge
-                  option Vacuum gauge
-                  option Voltmeter
-                  option Water temperature meter
-              .form-group
-                button.btn.btn-default(type='submit', name='submit', style='background-color: #1a133f;')
-                  i.fa.fa-search.fa-fw
-                  |  Send
-        // /.col-md-6
+          img#partbox.animated.slideInUp.wobble.img-responsive(src='/assets/images/pix/tyre-store.jpg')
+        // /.col-md-4
       // /.row
     // /.container
   // /.section
