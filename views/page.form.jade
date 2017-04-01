@@ -1,0 +1,84 @@
+extends layout.site
+
+block content
+ 
+  header.carousel(id='')
+    .carousel-inner
+      .item.active
+        .fill(style="background-image:url('assets/images/pix/box-of-parts-small.jpg');")
+        .carousel-caption
+          h1.animated.slideInDown(style='text-shadow: 2px 2px #000;')
+            | Parts Order Request
+            span.highlight 
+      // /.item
+    .mouse
+      
+  // Call to action - one section
+  section.cta-one-section.content-section.alt-bg-light
+    .container
+      .row
+        .col-md-6(ng-controller='PORFCtrl')
+          h2 Form
+          form#partForm.ajax-form(method='post', action='/search')
+              .form-group
+                label(for='make') Make
+                select#make.form-control(required)
+                  option -- select make --
+                  each make in makes
+                    option(value=make, title=make)= make
+              .form-group
+                label(for='model') Model
+                select#model.form-control(required)
+                
+              .form-group
+                label(for='year') Year
+                select#year.form-control(required)
+                
+              .form-group#partGrp
+                label(for='part') Part
+                select#part.form-control(required)
+                  option Alternator
+                  option Carbon Brushes
+                  option Coil
+                  option Fuel gauge
+                  option Housing
+                  option Odometer
+                  option Pulley
+                  option Rectifier
+                  option Regulator
+                  option Retainer
+                  option Rotor
+                  option Rotor Assembly
+                  option Slip Rings
+                  option Speedometer
+                  option Stator
+                  option Tachometer
+                  option Temperature gauge
+                  option Tire pressure gauge
+                  option Vacuum gauge
+                  option Voltmeter
+                  option Water temperature meter
+              .form-group
+                button.btn.btn-default(type='submit', name='submit', style='background-color: #1a133f;')
+                  i.fa.fa-search.fa-fw
+                  |  Send
+        // /.col-md-6
+        .col-md-6
+          img#partbox.img-responsive(src='/assets/images/pix/delivery.png')
+        // /.col-md-6
+      // /.row
+    // /.container
+  // /.cta-one-section
+  
+  // Call to action - two section
+  section.cta-two-section
+    .container
+      .row
+        .col-sm-9
+          h3 Need a part?
+          p We&apos;re here to help you get the best
+        .col-sm-3
+          a.btn.btn-overcolor(href='#about') Search now!
+      // /.row
+    // /.container
+  // /.cta-two-section

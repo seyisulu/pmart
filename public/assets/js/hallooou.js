@@ -611,9 +611,9 @@ $(function() {
     });
 
 });
+
 (function finder($){
-  $('#make').on('change', function (e) {
-    var optionSelected = $("option:selected", this);
+  $('#make').on('change', function () {
     var valueSelected = this.value;
     console.log(valueSelected);
     $.post( "/model", { make: valueSelected })
@@ -625,10 +625,9 @@ $(function() {
       console.log(data.models);
     });
   });
-  $('#model').on('change', function (e) {
+  $('#model').on('change', function () {
     var makeSelected = $("#make option:selected").val();
     console.log(makeSelected);
-    var optionSelected = $("option:selected", this);
     var valueSelected = this.value;
     console.log(valueSelected);
     $.post( "/year", { model: valueSelected, make: makeSelected })
@@ -640,6 +639,5 @@ $(function() {
       });
       $('#part').show();
     });
-  });
-  
+  });  
 })(jQuery);

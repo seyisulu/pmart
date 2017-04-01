@@ -21,29 +21,30 @@ module.exports = function (opt) {
         dbo.Car.collection.insert(require('./models/cars'), function (err) {
           if (err) opt.log.error('Error seeding car data: ', err);
           else {
-            opt.log.info('Successfully seeded country data');
-            dbo.User.collection.count(function(err, count) {
-              if( 0 === count ) {
-                opt.log.log('No users found');
-                var rnd = Math.random().toString().split('.')[1],
-                    usr = {
-                      fname: 'Admin',
-                      lname: 'Admin',
-                      phone: '08055146000',
-                      email: 'eolowo@live.com',
-                      password: opt.SHA256('passme88' + rnd).toString(),
-                      salt: rnd,
-                      admin: true
-                    };
-                dbo.User.collection.insert(usr, function (err) {
-                  if (err) opt.log.error('Error seeding admin data');
-                  else opt.log.info('Successfully seeded admin data');
-                });
-              } else opt.log.log(count + ' users available');
-            });
+            opt.log.info('Successfully seeded country data');            
           }
         });
       } else opt.log.log(count + ' cars available');
+    });
+    
+    dbo.User.collection.count(function(err, count) {
+      if( 0 === count ) {
+        opt.log.log('No users found');
+        var rnd = Math.random().toString().split('.')[1],
+            usr = {
+              fname: 'Admin',
+              lname: 'Admin',
+              phone: '08055146000',
+              email: 'eolowo@live.com',
+              password: opt.SHA256('passme88' + rnd).toString(),
+              salt: rnd,
+              admin: true
+            };
+        dbo.User.collection.insert(usr, function (err) {
+          if (err) opt.log.error('Error seeding admin data');
+          else opt.log.info('Successfully seeded admin data');
+        });
+      } else opt.log.log(count + ' user(s) available');
     });
   });
 

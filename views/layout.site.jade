@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='en', ng-app='pm')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -166,7 +166,11 @@ html(lang='en')
       script(src='/assets/js/plugins/pace.min.js')
       script(src='/assets/js/plugins/jquery.easing.min.js')
       script(src='/assets/js/plugins/jquery.validate.min.js')
-      script(src='/assets/js/plugins/additional-methods.min.js')
+      script(src='/assets/js/plugins/additional-methods.min.js') 
+      script(src='/node_modules/angular/angular.min.js')
+      script(src='/node_modules/angular-resource/angular-resource.min.js')
+      script(src='/node_modules/angular-route/angular-route.min.js')
       script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBoVKfEihX__NdMwdDysA6Vve6PE9Ierj4')
       // Custom JavaScript
       script(src='/assets/js/hallooou.js')
+      script(src='/client/client.js')

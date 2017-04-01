@@ -3,7 +3,7 @@ extends layout.site
 block content
   // Intro Header
   // Full Page Image Background Carousel Header
-  header#intro-carousel.carousel.slide
+  header#intro-carousel.carousel.slide(data-ride='carousel')
     // Optional Indicators
     //
       ol.carousel-indicators
@@ -16,34 +16,34 @@ block content
         // Set the first background image using inline CSS below.
         .fill(style="background-image:url('/assets/images/cover-one.jpg');")
         .carousel-caption(style='text-align:left;')
-          h1.animated.slideInDown
+          h1.animated.slideInDown(style='text-shadow: 2px 2px #000;color: #1a133f;')
             | Welcome to PartsMart
             span.highlight 
-          p.intro-text.animated.slideInUp(style='font-weight: bold!important;')
+          p.intro-text.animated.slideInUp(style='font-weight:bold!important;color:black;')
             | Genuine automobile parts, fast &amp; affordable
           a.btn.btn-default.btn-lg(href='#about') Search
-        .overlay-detail
+        // .overlay-detail
       // /.item
       .item
         // Set the second background image using inline CSS below.
         .fill(style="background-image:url('/assets/images/cover-two.jpg');")
         .carousel-caption(style='text-align:right;')
-          h1.animated.slideInDown
+          h1.animated.slideInDown(style='text-shadow: 2px 2px #000;color: #1a133f;')
             span.highlight 
             |  Stress-free<br> Original Parts
-          p.intro-text.animated.slideInUp Order for original auto spare parts <br>at affordable prices and have it <br>delivered to your doorsteps
+          p.intro-text.animated.slideInUp(style='color:black;') Order for original auto spare parts <br>at affordable prices and have it <br>delivered to your doorsteps
           a.btn.btn-default.btn-lg(href='#about') Order now
-        .overlay-detail
+        // .overlay-detail
       // /.item
       .item
         // Set the second background image using inline CSS below.
         .fill(style="background-image:url('/assets/images/cover-three.jpg');")
         .carousel-caption
-          h1.animated.slideInDown Ability to Deliver
-          p.intro-text.animated.slideInUp
+          h1.animated.slideInDown(style='text-shadow: 2px 2px #000;color: #1a133f;') Ability to Deliver
+          p.intro-text.animated.slideInUp(style='color:black;')
             | GMC, with its strategic international partnerships, <br>can fulfill on orders from around the world to customers
           a.btn.btn-default.btn-lg(href='#about') Get parts
-        .overlay-detail
+        // .overlay-detail
       // /.item
     // Controls
     a.left.carousel-control.squared(href='#intro-carousel', data-slide='prev')
@@ -159,7 +159,7 @@ block content
             .col-md-6.product-item
               .media-left
                 span.icon
-                  i.fa.fa-toggle-on.fa-3x
+                  i.fa.fa-shield.fa-3x
               // /.media-left
               .media-body
                 h3.media-heading You&apos;re Covered

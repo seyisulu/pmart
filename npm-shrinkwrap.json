@@ -53,6 +53,21 @@
       "from": "amdefine@>=0.0.4",
       "resolved": "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz"
     },
+    "angular": {
+      "version": "1.6.3",
+      "from": "angular@1.6.3",
+      "resolved": "https://registry.npmjs.org/angular/-/angular-1.6.3.tgz"
+    },
+    "angular-resource": {
+      "version": "1.6.4",
+      "from": "angular-resource@latest",
+      "resolved": "https://registry.npmjs.org/angular-resource/-/angular-resource-1.6.4.tgz"
+    },
+    "angular-route": {
+      "version": "1.6.4",
+      "from": "angular-route@latest",
+      "resolved": "https://registry.npmjs.org/angular-route/-/angular-route-1.6.4.tgz"
+    },
     "ansi-regex": {
       "version": "2.1.1",
       "from": "ansi-regex@>=2.0.0 <3.0.0",

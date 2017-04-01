@@ -527,7 +527,7 @@ blockquote span{
     padding: 0;
     margin: 10px 0;
     color: #fff;
-    font-size: 6em;
+    font-size: 4em;
     font-weight: bold;
 } 
 
@@ -1959,6 +1959,11 @@ body {
     border:1px solid #f00;
 }
 
-select#part {
+select#partGrp {
   display: none;
+}
+
+.form-control{
+  color: black;
+  font-weight: 400;
 }
