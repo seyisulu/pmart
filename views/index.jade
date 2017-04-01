@@ -16,33 +16,49 @@ block content
         // Set the first background image using inline CSS below.
         .fill(style="background-image:url('/assets/images/cover-one.jpg');")
         .carousel-caption(style='text-align:left;')
-          h1.animated.slideInDown(style='text-shadow: 2px 2px #000;color: #1a133f;')
-            | Welcome to PartsMart
+          h1.animated.slideInDown(style='text-shadow: 2px 2px 8px #000;color: #fff;')
+            | WELCOME TO PARTSMART
             span.highlight 
-          p.intro-text.animated.slideInUp(style='font-weight:bold!important;color:black;')
-            | Genuine automobile parts, fast &amp; affordable
-          a.btn.btn-default.btn-lg(href='#about') Search
+          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;')
+            span Genuine automobile parts, fast &amp; affordable
+          br
+          a.btn.btn-default.btn-lg(href='/form',style='background-color:#1a133f!important;') Search
         // .overlay-detail
       // /.item
       .item
         // Set the second background image using inline CSS below.
         .fill(style="background-image:url('/assets/images/cover-two.jpg');")
         .carousel-caption(style='text-align:right;')
-          h1.animated.slideInDown(style='text-shadow: 2px 2px #000;color: #1a133f;')
+          h1.animated.slideInDown(style='text-shadow: 2px 2px 8px #000;color: #fff;')
             span.highlight 
-            |  Stress-free<br> Original Parts
-          p.intro-text.animated.slideInUp(style='color:black;') Order for original auto spare parts <br>at affordable prices and have it <br>delivered to your doorsteps
-          a.btn.btn-default.btn-lg(href='#about') Order now
+            |  STRESS-FREE<br> ORIGINAL PARTS
+          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
+            span Order for original auto spare parts
+          br
+          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
+            span at affordable prices and have it
+          br
+          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
+            span delivered to your doorsteps
+          br
+          br
+          a.btn.btn-default.btn-lg(href='/form') Order now
         // .overlay-detail
       // /.item
       .item
         // Set the second background image using inline CSS below.
         .fill(style="background-image:url('/assets/images/cover-three.jpg');")
         .carousel-caption
-          h1.animated.slideInDown(style='text-shadow: 2px 2px #000;color: #1a133f;') Ability to Deliver
-          p.intro-text.animated.slideInUp(style='color:black;')
-            | GMC, with its strategic international partnerships, <br>can fulfill on orders from around the world to customers
-          a.btn.btn-default.btn-lg(href='#about') Get parts
+          h1.animated.slideInDown(style='text-shadow: 2px 2px 8px #000;color: #fff;')
+            |  ABILITY TO DELIVER
+          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
+            span GMC, with its strategic international partnerships,
+          br
+          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
+            span can fulfill on orders from around the world to customers
+          br
+          br
+          a.btn.btn-default.btn-lg(href='/form') Get parts
         // .overlay-detail
       // /.item
     // Controls
@@ -59,7 +75,7 @@ block content
           h2(style='color:#1a133f;') About PartsMart
           h3.caption(style='color:#1a133f;') Our Company
           p(style='color:black;') PartsMart Nigeria Ltd is an indigenous company providing Nigerians with the platform for the purchase of genuine and authentic spare parts for Bikes, Cars &amp; Trucks from Original Equipment Manufacturers in US, UK and Europe, fast and affordable rate.
-          blockquote
+          blockquote(style='font-size:18px;')
             | To be a leading, reliable and customer focused player in the provision of genuine and authentic auto spare parts in the country through a strategic partnership with top auto spare part manufacturing companies built on highest ethical standards.
             span Vision Statement
           a.btn.btn-default(href='#about', style='background-color: #1a133f;')
@@ -177,7 +193,8 @@ block content
     .container
       .row.text-center
         .col-md-12
-          h2(style='color:#f5c607;') PartsMart
+          h2(style='color:#f5c607;text-align: center;')
+            img.img-responsive(src='/assets/images/logo.png', alt='PartsMart', title='PartsMart', style='max-height: 128px;display:inline-block;')
           h3.caption.white
             | 
         // /.col-md-12
