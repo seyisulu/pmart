@@ -17,55 +17,59 @@ block content
   section.cta-one-section.content-section.alt-bg-light
     .container
       .row
-        .col-md-6(ng-controller='PORFCtrl')
+        .col-md-8(ng-controller='PORFCtrl')
           // h2 Form
           form#partForm.ajax-form(method='post', action='/search')
-              .form-group
-                label(for='make') Make
-                select#make.form-control(required)
-                  option -- select make --
-                  each make in makes
-                    option(value=make, title=make)= make
-              .form-group
-                label(for='model') Model
-                select#model.form-control(required)
-                
-              .form-group
-                label(for='year') Year
-                select#year.form-control(required)
-                
-              .form-group#partGrp
-                label(for='part') Part
-                select#part.form-control(required)
-                  option Alternator
-                  option Carbon Brushes
-                  option Coil
-                  option Fuel gauge
-                  option Housing
-                  option Odometer
-                  option Pulley
-                  option Rectifier
-                  option Regulator
-                  option Retainer
-                  option Rotor
-                  option Rotor Assembly
-                  option Slip Rings
-                  option Speedometer
-                  option Stator
-                  option Tachometer
-                  option Temperature gauge
-                  option Tire pressure gauge
-                  option Vacuum gauge
-                  option Voltmeter
-                  option Water temperature meter
+            .row
+              .col-md-6
+                .form-group
+                  label(for='make') Make
+                  select#make.form-control(required)
+                    option -- select make --
+                    each make in makes
+                      option(value=make, title=make)= make
+              .col-md-6
+                .form-group
+                  label(for='model') Model
+                  select#model.form-control(required)
+            .row
+              .col-md-6
+                .form-group
+                  label(for='year') Year
+                  select#year.form-control(required)
+              .col-md-6  
+                .form-group#partGrp
+                  label(for='part') Part
+                  select#part.form-control(required)
+                    option Alternator
+                    option Carbon Brushes
+                    option Coil
+                    option Fuel gauge
+                    option Housing
+                    option Odometer
+                    option Pulley
+                    option Rectifier
+                    option Regulator
+                    option Retainer
+                    option Rotor
+                    option Rotor Assembly
+                    option Slip Rings
+                    option Speedometer
+                    option Stator
+                    option Tachometer
+                    option Temperature gauge
+                    option Tire pressure gauge
+                    option Vacuum gauge
+                    option Voltmeter
+                    option Water temperature meter
               .form-group
                 button.btn.btn-default(type='submit', name='submit', style='background-color: #1a133f;')
                   i.fa.fa-search.fa-fw
                   |  Send
-        // /.col-md-6
-        .col-md-6
+        // /.col-md-8
+        .col-md-4
           img#partbox.img-responsive(src='/assets/images/pix/delivery.png')
-        // /.col-md-6
+        // /.col-md-4
       // /.row
     // /.container
   // /.cta-one-section

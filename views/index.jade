@@ -16,11 +16,11 @@ block content
         // Set the first background image using inline CSS below.
         .fill(style="background-image:url('/assets/images/cover-one.jpg');")
         .carousel-caption(style='text-align:left;')
-          h1.animated.slideInDown(style='text-shadow: 2px 2px 8px #000;color: #fff;')
+          h1.animated.rotateInUpLeft.rubberBand.wobble(style='text-shadow: 2px 2px 8px #000;color: #fff;')
             | WELCOME TO PARTSMART
             span.highlight 
-          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;')
-            span Genuine automobile parts, fast &amp; affordable
+          p.intro-text.animated.slideInUp.wobble(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;')
+            span.animated.rotateInUpLeft.wobble Genuine automobile parts, fast &amp; affordable
           br
           a.btn.btn-default.btn-lg(href='/form',style='background-color:#1a133f!important;') Search
         // .overlay-detail
@@ -29,20 +29,20 @@ block content
         // Set the second background image using inline CSS below.
         .fill(style="background-image:url('/assets/images/cover-two.jpg');")
         .carousel-caption(style='text-align:right;')
-          h1.animated.slideInDown(style='text-shadow: 2px 2px 8px #000;color: #fff;')
+          h1.animated.flipInX.shake(style='text-shadow: 2px 2px 8px #000;color: #fff;')
             span.highlight 
             |  STRESS-FREE<br> ORIGINAL PARTS
-          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
+          p.intro-text.animated.bounceInLeft.bounce(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
             span Order for original auto spare parts
           br
-          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
+          p.intro-text.animated.rotateInUpLeft.wobble(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
             span at affordable prices and have it
           br
-          p.intro-text.animated.slideInUp(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
+          p.intro-text.animated.bounceInUp.swing(style='display:inline-block;font-weight:bold!important;color:#1a133f;background-color: white;margin:0;')
             span delivered to your doorsteps
           br
           br
-          a.btn.btn-default.btn-lg(href='/form') Order now
+          a.btn.btn-default.btn-lg(href='/form',style='background-color:#1a133f!important;') Order now
         // .overlay-detail
       // /.item
       .item
@@ -58,7 +58,7 @@ block content
             span can fulfill on orders from around the world to customers
           br
           br
-          a.btn.btn-default.btn-lg(href='/form') Get parts
+          a.btn.btn-default.btn-lg(href='/form',style='background-color:#1a133f!important;') Get parts
         // .overlay-detail
       // /.item
     // Controls
