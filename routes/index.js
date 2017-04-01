@@ -31,6 +31,68 @@ module.exports = function (opt) {
     });
   });
   
+  opt.router.post('/form', function(req, res) {
+    var rqb = req.body,
+        n2b = (str) => { return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2'); };
+    process.nextTick(() => {
+        opt.mail.send(
+          rqb.authemail.trim(),
+          'PartsMart: Request Received',
+          {
+            name: rqb.name,
+            body: [
+              `We have received your part order request as detailed below: `,
+              `<strong>Make:</strong> ${rqb.make}`,
+              `<strong>Model:</strong> ${rqb.model}`,
+              `<strong>Year:</strong> ${rqb.year}`,
+              `<strong>Part:</strong> ${rqb.part}`,
+              `<strong>Chassis:</strong> ${rqb.chassis.trim()}`,
+              `<strong>Type:</strong> ${rqb.type}`,
+              
+              `<strong>Customer Name:</strong> ${rqb.name.trim()}`,
+              
+              `<strong>Delivery Address:</strong>`,
+              n2b(rqb.address),              
+              `<strong>Phone Number:</strong> ${rqb.phone.trim()}`,
+              
+              `<strong>Alternate Delivery Address:</strong>`,
+              n2b(rqb.address2),              
+              `<strong>Alternate Phone Number:</strong> ${rqb.phone2.trim()}`,
+              
+              `<hr>`,
+              
+              'Authorized Person: ',
+              `<strong>Name:</strong> ${rqb.authname.trim()}`,
+              `<strong>Phone:</strong> ${rqb.authphone.trim()}`,
+              `<strong>Email:</strong> ${rqb.authemail.trim()}`,
+              
+              `<hr>`,
+              
+              'Thank you. We wil be in touch shortly.',
+              `Regards,`,
+              'PartsMart Team'
+            ]
+          })
+          .then(resp => opt.log.info(resp))
+          .catch(err => opt.log.error(err));
+      });
+    
+    opt.asynx.parallel({
+      makes: function(cb) {
+        opt.dbo.Car
+        .find({ })
+        .distinct('make')
+        .exec(function(err, doc) {
+          if (err) opt.log.error('Error fetching cars');
+          cb(err, doc);
+        });
+      }
+    }, function(err, results) {
+      results.msg = `Your message has been sent, thank you.`;
+      res.render('page.form.jade', results);
+    });
+  });
+  
   opt.router.get('/auth', function(req, res) {
     res.render('auth', { title: 'PartsMart' });
   });
@@ -39,7 +101,7 @@ module.exports = function (opt) {
     var rqb = req.body;
     process.nextTick(() => {
         opt.mail.send(
-          rqb.email,
+          rqb.email.trim(),
           'PartsMart: Thank You',
           {
             name: rqb.name,

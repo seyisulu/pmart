@@ -14,33 +14,37 @@ block content
     .mouse
       
   // Call to action - one section
-  section.cta-one-section.content-section.alt-bg-light
+  section.cta-one-section.content-section.alt-bg-light(style='background-color: #1a133f!important;')
     .container
       .row
         .col-md-8(ng-controller='PORFCtrl')
+          if !!msg
+            .alert.alert-success(role='alert')
+              a.close(href='#', data-dismiss='alert') &times;
+              | #{msg}
           // h2 Form
-          form#partForm.ajax-form(method='post', action='/search')
+          form#partForm.ajax-form(method='post', action='/form')
             .row
               .col-md-6
                 .form-group
-                  label(for='make') Make
-                  select#make.form-control(required)
+                  label(for='make') Make 
+                  select#make.form-control(name='make', required)
                     option -- select make --
                     each make in makes
                       option(value=make, title=make)= make
               .col-md-6
                 .form-group
-                  label(for='model') Model
-                  select#model.form-control(required)
+                  label(for='model') Model 
+                  select#model.form-control(name='model', required)
             .row
               .col-md-6
                 .form-group
-                  label(for='year') Year
-                  select#year.form-control(required)
+                  label(for='year') Year 
+                  select#year.form-control(name='year', required)
               .col-md-6  
                 .form-group#partGrp
-                  label(for='part') Part
-                  select#part.form-control(required)
+                  label(for='part') Part 
+                  select#part.form-control(name='part', required)
                     option Alternator
                     option Carbon Brushes
                     option Coil
@@ -62,10 +66,85 @@ block content
                     option Vacuum gauge
                     option Voltmeter
                     option Water temperature meter
-              .form-group
-                button.btn.btn-default(type='submit', name='submit', style='background-color: #1a133f;')
-                  i.fa.fa-search.fa-fw
-                  |  Send
+            
+            .row
+              .col-md-12
+                .form-group
+                  label(for='chassis') Chassis # 
+                  input#chassis.form-control(type='text', name='chassis', placeholder='Chassis #', value='', required='')
+            .row
+              .col-md-2
+                .form-group
+                  label Type 
+              .col-md-10
+                .form-group
+                  .radio-inline 
+                    label.radio-inline(for='bike')
+                      input#bike(type='radio', name='type', value='Bike', required='')
+                      |  Bike
+                  .radio-inline
+                    label.radio-inline(for='car')
+                      input#car(type='radio', name='type', value='Car', required='')
+                      |  Car
+                  .radio-inline 
+                    label.radio-inline(for='van') 
+                      input#van(type='radio', name='type', value='Van', required='')
+                      |  Van 
+                  .radio-inline 
+                    label.radio-inline(for='truck') 
+                      input#truck(type='radio', name='type', value='Truck', required='')
+                      |  Truck
+                      
+            .row
+              .col-md-12
+                .form-group
+                  label(for='name') Customer Name 
+                  input#name.form-control(type='text', name='name', placeholder='Customer Name', value='', required='')
+            .row
+              .col-md-6
+                .form-group
+                  label(for='address') Delivery Address 
+                  textarea#address.form-control(rows='4', name='address', placeholder='Delivery Address', required='')
+              .col-md-6
+                .form-group
+                  label(for='address2') Alternate Delivery Address 
+                  textarea#address2.form-control(rows='4', name='address2', placeholder='Alternate Delivery Address')
+                  
+            .row
+              .col-md-6
+                .form-group
+                  label(for='phone') Phone Number 
+                  input#phone.form-control(type='text', name='phone', placeholder='Phone Number', required='')
+              .col-md-6
+                .form-group
+                  label(for='phone2') Alternate Phone Number 
+                  input#phone2.form-control(type='text', name='phone2', placeholder='Alternate Phone Number')
+            hr
+            .row
+             .col-md-12
+               .form-group
+                 label Authorized Person
+            .row
+              .col-md-12
+                .form-group
+                  label(for='authname') Name 
+                  input#authname.form-control(type='text', name='authname', placeholder='Name', required='')     
+            .row
+              .col-md-6
+                .form-group
+                  label(for='authphone') Phone 
+                  input#authphone.form-control(type='text', name='authphone', placeholder='Phone', required='')
+              .col-md-6
+                .form-group
+                  label(for='authemail') Email 
+                  input#authemail.form-control(type='email', name='authemail', placeholder='Email')
+            br      
+            .row
+              .col-md-12
+                .form-group
+                  button.btn.btn-default(type='submit', name='submit')
+                    i.fa.fa-search.fa-fw
+                    |  Send
         // /.col-md-8
         .col-md-4
           img#partbox.img-responsive(src='/assets/images/pix/delivery.png')

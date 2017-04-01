@@ -619,6 +619,7 @@ $(function() {
     $.post( "/model", { make: valueSelected })
     .done(function( data ) {
       $("#model").empty();
+      $("#model").append("<option>-- select model --</option>");
       $.each(data.models, function(key, value) {
         $("#model").append("<option>" + value + "</option>");
       });
@@ -634,6 +635,7 @@ $(function() {
     .done(function( data ) {
       console.log(data);
       $("#year").empty();
+      $("#year").append("<option>-- select year --</option>");
       $.each(data.years, function(key, value) {
         $("#year").append("<option>" + value + "</option>");
       });
