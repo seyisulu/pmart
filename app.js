@@ -27,7 +27,9 @@ var pro = app.get('env') !== 'development'? true: false;
 var log = require('./log')({ chalk: chalk });
 var dbo = require('./dbo')({ mongoose: mongoose, log: log, SHA256: SHA256 });
 var helpers = require('./helper')(dbo, SHA256);
-var routeOpts = { dbo: dbo, hs: helpers, log: log, router: express.Router(), SHA256: SHA256, asynx: asynx, mail: mail, passport: passport };
+var routeOpts = {
+  dbo: dbo, hs: helpers, log: log, router: express.Router(), _: _,
+  SHA256: SHA256, asynx: asynx, mail: mail, passport: passport };
 
 String.prototype.toObjectId = function() {
   var ObjectId = mongoose.Types.ObjectId;
@@ -87,7 +89,7 @@ app.set('view engine', 'jade');
 app.set('view cache', pro);
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
